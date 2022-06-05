@@ -1,0 +1,80 @@
+;
+; shiina.inf
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=System ; TODO: specify appropriate Class
+ClassGuid={4d36e97d-e325-11ce-bfc1-08002be10318} ; TODO: specify appropriate ClassGuid
+Provider=%ManufacturerName%
+CatalogFile=shiina.cat
+DriverVer = 06/05/2022,16.49.1.189
+PnpLockdown=1
+
+[DestinationDirs]
+DefaultDestDir = 12
+shiina_Device_CoInstaller_CopyFiles = 11
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+shiina.sys  = 1,,
+;
+
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTamd64
+
+[Standard.NTamd64]
+%shiina.DeviceDesc%=shiina_Device, Root\shiina ; TODO: edit hw-id
+
+[shiina_Device.NT]
+CopyFiles=Drivers_Dir
+
+[Drivers_Dir]
+shiina.sys
+
+;-------------- Service installation
+[shiina_Device.NT.Services]
+AddService = shiina,%SPSVCINST_ASSOCSERVICE%, shiina_Service_Inst
+
+; -------------- shiina driver install sections
+[shiina_Service_Inst]
+DisplayName    = %shiina.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\shiina.sys
+
+;
+;--- shiina_Device Coinstaller installation ------
+;
+
+[shiina_Device.NT.CoInstallers]
+AddReg=shiina_Device_CoInstaller_AddReg
+CopyFiles=shiina_Device_CoInstaller_CopyFiles
+
+[shiina_Device_CoInstaller_AddReg]
+;
+
+
+[shiina_Device_CoInstaller_CopyFiles]
+;
+
+
+[shiina_Device.NT.Wdf]
+KmdfService =  shiina, shiina_wdfsect
+[shiina_wdfsect]
+KmdfLibraryVersion = 1.15
+
+[Strings]
+SPSVCINST_ASSOCSERVICE= 0x00000002
+ManufacturerName="<Your manufacturer name>" ;TODO: Replace with your manufacturer name
+DiskName = "shiina Installation Disk"
+shiina.DeviceDesc = "shiina Device"
+shiina.SVCDESC = "shiina Service"
