@@ -1,0 +1,27 @@
+﻿  Building 'shiina' with toolset 'WindowsKernelModeDriver10.0' and the 'Universal' target platform.
+  Stamping x64\Debug\shiina.inf
+  Stamping [Version] section with DriverVer=06/05/2022,16.49.1.189
+  communication.c
+  events.c
+  memory.c
+  shikimori.c
+  Generating Code...
+  shiina.vcxproj -> C:\Users\23tho\source\repos\shiina\x64\Debug\shiina.sys
+  Done Adding Additional Store
+  Successfully signed: C:\Users\23tho\source\repos\shiina\x64\Debug\shiina.sys
+  
+  Driver is 'Universal'.
+  .........................
+  Signability test complete.
+  
+  Errors:
+  None
+  
+  Warnings:
+  None
+  
+  Catalog generation complete.
+  C:\Users\23tho\source\repos\shiina\x64\Debug\shiina\shiina.cat
+  Done Adding Additional Store
+  Successfully signed: C:\Users\23tho\source\repos\shiina\x64\Debug\shiina\shiina.cat
+  
