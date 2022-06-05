@@ -1,0 +1,18 @@
+﻿  shiinaController.cpp
+C:\Users\23tho\source\repos\shiina\shiinaController\kernelinterface.hpp(63,22): warning C4244: '=': conversion from 'SIZE_T' to 'ULONG', possible loss of data
+C:\Users\23tho\source\repos\shiina\shiinaController\shiinaController.cpp(19): message : see reference to function template instantiation 'type KernelInterface::ReadVirtualMemory<uint32_t>(ULONG,ULONG,SIZE_T)' being compiled
+          with
+          [
+              type=uint32_t
+          ]
+C:\Users\23tho\source\repos\shiina\shiinaController\kernelinterface.hpp(89,23): warning C4244: '=': conversion from 'SIZE_T' to 'ULONG', possible loss of data
+C:\Users\23tho\source\repos\shiina\shiinaController\shiinaController.cpp(21): message : see reference to function template instantiation 'bool KernelInterface::WriteVirtualMemory<float>(ULONG,ULONG,type,SIZE_T)' being compiled
+          with
+          [
+              type=float
+          ]
+  Generating code
+  Previous IOBJ not found, fall back to full compilation.
+  All 17 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  shiinaController.vcxproj -> C:\Users\23tho\source\repos\shiina\x64\Release\shiinaController.exe
