@@ -9,9 +9,11 @@ shiina is my first attempt at a kernel cheat for CSGO. CSGO only uses VAC (Valve
 
 # Features
 
-- no flash (screen won't flash white when flashed)
+- no flash
+- chams
 - bhop (removes a jump check)
-- chams (WIP)
+- triggerbot (WIP)
+
 
 # Usage
 
